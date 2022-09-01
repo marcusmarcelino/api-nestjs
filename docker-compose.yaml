@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  api-nest:
+    build: .
+    entrypoint: dockerize -wait tcp://db-store:5432 -timeout 40s ./.docker/entrypoint.sh
+    container_name: api-nest
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - db-store
+  
+  db-store:
+    build: .docker/postgres
+    container_name: db-store
+    restart: always
+    tty: true
+    volumes:
+      - ./.docker/dbdata:/var/lib/postgresql/data 777
+    ports: 
+     - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=store
+
+  pgadmin-store:
+    image: dpage/pgadmin4
+    container_name: pgadmin-store
+    tty: true
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@user.com
+      - PGADMIN_DEFAULT_PASSWORD=123456
+    ports:
+      - 9000:80

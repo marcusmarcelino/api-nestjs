@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "semi": false,
+  "endOfLine": "auto",
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    },
+    "warn",
+    {
+      "singleQuote": true,
+      "endOfLine": "auto"
+    }
+  ]
+}

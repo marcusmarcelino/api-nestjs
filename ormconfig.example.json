@@ -1,0 +1,18 @@
+{
+  "type": "postgres",
+  "host": "db-store",
+  "port": 5432,
+  "username": "postgres",
+  "password": "root",
+  "database": "store",
+  "migrations": [
+    "./src/database/migrations/**.ts"
+  ],
+  "entities": [
+    "./src/app/models/*.ts"
+  ],
+  "cli": {
+    "entitiesDir": "./src/database/migrations",
+    "migrationsDir": "./src/database/migrations"
+  }
+}

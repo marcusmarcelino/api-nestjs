@@ -37,3 +37,6 @@ lerna-debug.log*
 .history
 .docker/dbdata
 .env
+
+yarn.lock
+package-lock.json

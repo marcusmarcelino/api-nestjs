@@ -1,17 +1,18 @@
 {
   "singleQuote": true,
   "trailingComma": "es5",
-  "semi": false,
-  "endOfLine": "auto",
+  "semi": true,
+  "endOfLine": "lf",
+  "tabWidth": 2,
   "prettier/prettier": [
     "error",
     {
-      "endOfLine": "auto"
+      "endOfLine": "lf"
     },
     "warn",
     {
       "singleQuote": true,
-      "endOfLine": "auto"
+      "endOfLine": "lf"
     }
   ]
 }
